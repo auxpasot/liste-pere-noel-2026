@@ -1,0 +1,320 @@
+
+/* COULEURS DU SITE */
+
+:root {
+    --rouge: #A8323E;
+    --creme: #FFF4E8;
+    --rose: #E9B9A5;
+}
+
+/* BASE */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--rouge);
+    color: var(--creme);
+    font-family: Georgia, serif;
+    min-height: 100vh;
+}
+
+/* PAGE D'ACCUEIL */
+
+.accueil {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+/* TEXTES */
+
+.petit-texte {
+    color: var(--rose);
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: clamp(38px, 7vw, 75px);
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+.instruction {
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+.clique {
+    color: var(--rose);
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-top: 20px;
+}
+
+/* EMPLACEMENT PHOTO */
+
+.zone-photo {
+    width: 280px;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-placeholder {
+    width: 220px;
+    height: 260px;
+    border: 2px dashed var(--rose);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--rose);
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+/* PHOTO */
+
+.zone-photo {
+    width: 280px;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ma-photo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+
+    cursor: pointer;
+
+    /* Ombre légère */
+    filter: drop-shadow(0px 8px 10px rgba(0, 0, 0, 0.25));
+
+    /* Animation fluide */
+    transition: transform 0.5s ease;
+}
+
+/* GROSSISSEMENT AU CLIC */
+
+#ma-photo:hover {
+    transform: scale(1.05);
+}
+
+/* ANIMATION DE TRANSITION */
+
+#ma-photo.tourne {
+    animation: zoomTourne 1.2s ease-in forwards;
+}
+
+@keyframes zoomTourne {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    50% {
+        transform: scale(1.5) rotate(360deg);
+    }
+
+    100% {
+        transform: scale(8) rotate(1080deg);
+        opacity: 0;
+    }
+}
+
+/* ==================================
+   PAGE LISTE AU PERE NOEL
+================================== */
+
+.page-liste {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.liste-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* TITRE */
+
+.liste-header {
+    margin-bottom: 35px;
+}
+
+.liste-header h1 {
+    margin-bottom: 12px;
+}
+
+.intro-liste {
+    color: var(--rose);
+    font-size: 18px;
+}
+
+
+/* ==================================
+   CARROUSEL STICKERS
+================================== */
+
+.carrousel {
+    width: 100%;
+    max-width: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carrousel-fenetre {
+    width: 100%;
+    height: 480px;
+    position: relative;
+
+    /* Autorise le scroll vertical sur téléphone */
+    touch-action: pan-y;
+    overflow: hidden;
+}
+
+.carrousel-piste {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* CHAQUE CADEAU */
+
+.cadeau {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: scale(0.9);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.cadeau.actif {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+/* IMAGE DETOUREE */
+
+.image-cadeau {
+    width: 100%;
+    height: 340px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: transparent;
+}
+
+.image-cadeau img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+
+    /* Ombre du sticker */
+    filter: drop-shadow(0 10px 12px rgba(0, 0, 0, 0.25));
+
+    user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: none;
+}
+
+/* TITRES */
+
+.cadeau h2 {
+    font-size: 28px;
+    font-weight: normal;
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+.cadeau p {
+    color: var(--rose);
+    font-size: 16px;
+}
+
+/* COMPTEUR */
+
+.compteur {
+    color: var(--rose);
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-top: 15px;
+}
+
+/* INDICATION SWIPE */
+
+.instruction-swipe {
+    color: var(--rose);
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-top: 25px;
+    text-align: center;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .liste-container {
+        padding: 25px 15px;
+    }
+
+    .liste-header {
+        margin-bottom: 15px;
+    }
+
+    .carrousel-fenetre {
+        height: 430px;
+    }
+
+    .image-cadeau {
+        height: 310px;
+    }
+
+    .cadeau h2 {
+        font-size: 24px;
+    }
+
+    .cadeau p {
+        font-size: 14px;
+    }
+
+}

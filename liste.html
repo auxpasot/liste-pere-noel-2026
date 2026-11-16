@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma liste au Père Noël</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="page-liste">
+
+    <main class="liste-container">
+
+        <header class="liste-header">
+            <h1>Ma liste au Père Noël</h1>
+            <p class="intro-liste">
+                J'ai été sage... enfin, je crois.
+            </p>
+        </header>
+
+       
+<!-- CARROUSEL DE STICKERS -->
+
+<section class="carrousel">
+
+    <div class="carrousel-fenetre" id="fenetre">
+
+        <div class="carrousel-piste" id="piste">
+
+            <!-- CADEAU 1 -->
+            <article class="cadeau">
+                <div class="image-cadeau">
+                    <img src="images/cadeau1.png" alt="Premier cadeau" draggable="false">
+                </div>
+
+                <h2>Imprimante 3D</h2>
+                <p>Bambulab A1 - 240€</p>
+            </article>
+
+            <!-- CADEAU 2 -->
+            <article class="cadeau">
+                <div class="image-cadeau">
+                    <img src="images/cadeau2.png" alt="Deuxième cadeau" draggable="false">
+                </div>
+
+                <h2>Des pelotes de Laine</h2>
+                <p>HappyWhool - 30€ les 10 pelotes de 50g</p>
+            </article>
+
+            <!-- CADEAU 3 -->
+            <article class="cadeau">
+                <div class="image-cadeau">
+                    <img src="images/cadeau3.png" alt="Troisième cadeau" draggable="false">
+                </div>
+
+                <h2>Une dremel</h2>
+                <p>Castorama - 50€</p>
+            </article>
+
+        </div>
+
+    </div>
+
+    <p class="compteur" id="compteur">01 / 03</p>
+
+</section>
+
+<p class="instruction-swipe">
+    ← FAIS GLISSER LES CADEAUX →
+</p>
+
+    </main>
+
+    <script src="liste.js"></script>
+
+</body>
+</html>
